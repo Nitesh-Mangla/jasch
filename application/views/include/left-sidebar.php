@@ -86,7 +86,7 @@
 	  </ul>
 	</li>
 
-  <li class="treeview <?php if($two == 'Slider' || $two == 'FstTileFeatures' || $two == '1stTile/ProductionTechnics' || $two == 'BrandCollection?id=0'){ echo 'active';} ?>">
+  <li class="treeview <?php if($two == 'Slider' || $two == 'AboutBody' || $two == 'CompanyProfile' || $two == 'CompanyGrowth' || $two == 'Infrastructure' || $two == 'ManufatureMachine' || $two == 'Clients'){ echo 'active';} ?>">
 	  <a>
 	    <i class="fa fa-files-o"></i>
 	    <span>About</span>
@@ -99,20 +99,37 @@
 		   </a>
 	    </li>
 	    <li>
-	    	<a href="<?php echo base_url(); ?>1stTile/FstTileFeatures" >
-		     <i class="fa fa-list-alt"></i> <span>Features</span> 
+	    	<a href="<?php echo base_url(); ?>about/AboutBody" >
+		     <i class="fa fa-list-alt"></i> <span>About Body</span> 
 		   </a>
 	   </li>
 	    <li>
-	    	<a href="<?php echo base_url(); ?>1stTile/ProductionTechnics" >
-		     <i class="fa fa-list-alt"></i> <span>Product Technique</span> 
+	    	<a href="<?php echo base_url(); ?>about/CompanyProfile" >
+		     <i class="fa fa-list-alt"></i> <span>Company Profile</span> 
 		   </a>
 	    </li>
 	    <li>
-	    	<a href="<?php echo base_url(); ?>1stTile/BrandCollection?id=0" >
-		     <i class="fa fa-list-alt"></i> <span>Collection</span> 
+	    	<a href="<?php echo base_url(); ?>about/CompanyGrowth" >
+		     <i class="fa fa-list-alt"></i> <span>Company Growth</span> 
 		   </a>
 	   </li>
+
+	   <li>
+	    	<a href="<?php echo base_url(); ?>about/Infrastructure" >
+		     <i class="fa fa-list-alt"></i> <span>Infrastructure</span> 
+		   </a>
+	   </li>
+
+	   <li>
+	    	<a href="<?php echo base_url(); ?>about/ManufatureMachine" >
+		     <i class="fa fa-list-alt"></i> <span>Manufature Machine</span> 
+		   </a>
+	   </li>
+	   	    <li>
+	    	<a href="<?php echo base_url(); ?>about/Clients?" >
+		     <i class="fa fa-list-alt"></i> <span>Clients</span> 
+		   </a>
+	    </li>
 	 </ul>
 </li>
 
@@ -167,6 +184,8 @@
 		     <i class="fa fa-list-alt"></i> <span>Collection</span> 
 		   </a>
 	    </li>
+
+
 	 </ul>
 </li>
 

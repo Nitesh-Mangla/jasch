@@ -1,11 +1,11 @@
 <?php
-
-class CompanyProfile extends CI_Controller
+class AboutBody extends CI_Controller
 {
+
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('CompanyProfileModel', 'profile');
+		$this->load->model('AboutBodyModel', 'profile');		
 	}
 
 	public function index()
@@ -15,7 +15,7 @@ class CompanyProfile extends CI_Controller
 		$data['data'] = $this->getData();
 		$this->load->view('include/header');
 		$this->load->view('include/breadcrum');
-		$this->load->view('companyprofile', $data);
+		$this->load->view('aboutbody', $data);
 		$this->load->view('include/footer');
 	}
 
@@ -29,17 +29,22 @@ class CompanyProfile extends CI_Controller
 		if( $this->input->post( 'submit' ) )
 		{
 			$data = $this->input->post();
-			uploadImages( 'files', 'about_us' );
-			if( $this->profile->updateProfileData( $data, $_FILES['files']['name'] ) )
+
+			if( $this->profile->updateData( $data ) )
 			{
-				$this->session->set_flashdata( 'msg', 'Data has been successfully updated' );
-			}
+				$this->session->set_flashdata( 'msg', 'Data has been updated' );
+			}  
 			else
 			{
 				$this->session->set_flashdata( 'error', 'Data is not updated' );
 			}
 		}
 
-		header( 'Location:'.base_url().'about/CompanyProfile' );
+		$data['data'] = $this->getData();
+		$this->load->view('include/header');
+		$this->load->view('include/breadcrum');
+		$this->load->view('aboutbody', $data);
+		$this->load->view('include/footer');
 	}
+
 }

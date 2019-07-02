@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
 // $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
-$config['base_url'] = 'http://localhost/jasch/';
+$config['base_url'] = 'https://localhost:8080/jasch/';
 
 /*
 |--------------------------------------------------------------------------

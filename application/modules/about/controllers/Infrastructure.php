@@ -1,11 +1,11 @@
 <?php
 
-class CompanyProfile extends CI_Controller
+class Infrastructure extends CI_Controller
 {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('CompanyProfileModel', 'profile');
+		$this->load->model('InfrastructureModel', 'infra');
 	}
 
 	public function index()
@@ -15,22 +15,22 @@ class CompanyProfile extends CI_Controller
 		$data['data'] = $this->getData();
 		$this->load->view('include/header');
 		$this->load->view('include/breadcrum');
-		$this->load->view('companyprofile', $data);
+		$this->load->view('infrastructure', $data);
 		$this->load->view('include/footer');
 	}
 
 	public function getData()
 	{
-		return $this->profile->fetchData();
+		return $this->infra->fetchData();
 	}
 
-	public function updateProfile()
+	public function updateInfrastructure()
 	{
 		if( $this->input->post( 'submit' ) )
 		{
 			$data = $this->input->post();
 			uploadImages( 'files', 'about_us' );
-			if( $this->profile->updateProfileData( $data, $_FILES['files']['name'] ) )
+			if( $this->infra->updateInfrastructureData( $data, $_FILES['files']['name'] ) )
 			{
 				$this->session->set_flashdata( 'msg', 'Data has been successfully updated' );
 			}
@@ -40,6 +40,6 @@ class CompanyProfile extends CI_Controller
 			}
 		}
 
-		header( 'Location:'.base_url().'about/CompanyProfile' );
+		header( 'Location:'.base_url().'about/Infrastructure' );
 	}
 }
